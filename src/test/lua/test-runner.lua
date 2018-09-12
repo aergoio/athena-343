@@ -1,0 +1,6 @@
+local testSuite = TestSuite("runner-testsuite")
+local testCase = TestCase('add', function()
+  assertTrue(true)
+end)
+testSuite:add(testCase)
+testSuite:run()
