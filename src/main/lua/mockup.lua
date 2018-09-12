@@ -2,35 +2,36 @@
 --
 -- Mock-up for aergo server environment
 --
-function getItem(key)
+system = {}
+function system.getItem(key)
   return value
 end
 
-function setItem(key, value)
+function system.setItem(key, value)
 end
 
-function getSender()
+function system.getSender()
   return address
 end
 
-function getCreator()
+function system.getCreator()
   return address
 end
-function getBlockhash()
+function system.getBlockhash()
   return hash
 end
-function getBlockheight()
+function system.getBlockheight()
   return height
 end
-function Timestamp()
+function system.Timestamp()
 end
-function getContractID()
+function system.getContractID()
   return id
 end
-function getTxhash()
+function system.getTxhash()
   return hash
 end
-function getNode()
+function system.getNode()
   return id
 end
 
