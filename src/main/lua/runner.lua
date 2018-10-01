@@ -2,7 +2,7 @@
 --
 -- Test framework for lua contract
 --
-require "hera.test.Athena"
+require "ship.test.Athena"
 
 TestCase = { }
 TestCaseMetatable = { __index = TestCase }
@@ -29,17 +29,18 @@ function TestCase:run()
   TestReporter.startTest(self.name)
   local result, err = pcall(self.runnable)
   if self.error then
-    result = self.error(err)
-    if result then
-      error = nil
+    if err then
+      local handledResult = self.error(err)
+      if not handledResult then
+        TestReporter.recordError(self.name, 'User unexpected error')
+      end
     else
-      error = 'Unexpected error'
+      TestReporter.recordError(self.name, 'No error')
     end
+  elseif err then
+    TestReporter.recordError(self.name, 'Unexpected error')
   end
-  if err then
-    TestReporter.recordError(self.name, err == nil)
-  end
-  TestReporter.endTest(self.name, result)
+  TestReporter.endTest(self.name)
 end
 
 local TestSuite = { }

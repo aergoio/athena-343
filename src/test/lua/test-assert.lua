@@ -14,4 +14,5 @@ testSuite:add(TestCase('expected', function()
 end):expected(function(error)
   return string.match(error, 'error')
 end))
+
 testSuite:run()
