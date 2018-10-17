@@ -32,13 +32,13 @@ function TestCase:run()
     if err then
       local handledResult = self.error(err)
       if not handledResult then
-        TestReporter.recordError(self.name, 'User unexpected error')
+        TestReporter.recordError(self.name, 'User unexpected error: ' .. err)
       end
     else
       TestReporter.recordError(self.name, 'No error')
     end
   elseif err then
-    TestReporter.recordError(self.name, 'Unexpected error')
+    TestReporter.recordError(self.name, 'Unexpected error: ' .. err)
   end
   TestReporter.endTest(self.name)
 end
