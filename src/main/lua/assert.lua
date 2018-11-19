@@ -50,3 +50,27 @@ function assertEquals(expected, actual, message)
     error(tostring(actual) .. " is not equal to " .. tostring(expected) .. ". Expected: " .. tostring(expected) .. ", Actual: " .. tostring(actual), 0)
   end
 end
+
+function assertNull(actual, message)
+  if nil == actual then
+    return 
+  end
+
+  if message then
+    error(message, 0)
+  else
+    error(tostring(actual) .. " must be null", 0)
+  end
+end
+
+function assertNotNull(actual, message)
+  if nil ~= actual then
+    return 
+  end
+
+  if message then
+    error(message, 0)
+  else
+    error("value must not be null", 0)
+  end
+end

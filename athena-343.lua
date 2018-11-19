@@ -75,38 +75,7 @@ end
 --
 -- Mock-up for aergo server environment
 --
-system = {}
-function system.getItem(key)
-  return value
-end
-
-function system.setItem(key, value)
-end
-
-function system.getSender()
-  return address
-end
-
-function system.getCreator()
-  return address
-end
-function system.getBlockhash()
-  return hash
-end
-function system.getBlockheight()
-  return height
-end
-function system.Timestamp()
-end
-function system.getContractID()
-  return id
-end
-function system.getTxhash()
-  return hash
-end
-function system.getNode()
-  return id
-end
+require "ship.test.Athena"
 
 abi = {}
 function abi.register(funcname, ...)
@@ -161,5 +130,29 @@ function assertEquals(expected, actual, message)
     error(message, 0)
   else
     error(tostring(actual) .. " is not equal to " .. tostring(expected) .. ". Expected: " .. tostring(expected) .. ", Actual: " .. tostring(actual), 0)
+  end
+end
+
+function assertNull(actual, message)
+  if nil == actual then
+    return 
+  end
+
+  if message then
+    error(message, 0)
+  else
+    error(tostring(actual) .. " must be null", 0)
+  end
+end
+
+function assertNotNull(actual, message)
+  if nil ~= actual then
+    return 
+  end
+
+  if message then
+    error(message, 0)
+  else
+    error("value must not be null", 0)
   end
 end
