@@ -39,7 +39,55 @@ contract = {
   delegatecall = function(address, funcname, ...) -- ... is function arguments
   end,
   pcall = function(func, ...) -- ... is function arguments
+  end,
+  balance = function()
   end
+}
+
+crypto = {
+    sha256 = function(data)
+    end,
+    ecverify = function(msg, sig, addr)
+    end
+}
+
+bignum = {
+    add = function(a,b)
+    end,
+    compare = function(a,b)
+    end,
+    digits = function(s)
+    end,
+    div = function(a,b)
+    end,
+    divmod = function(a,b)
+    end,
+    isneg = function(a)
+    end,
+    iszero = function(a)
+    end,
+    mod = function(a,b)
+    end,
+    mul = function(a,b)
+    end,
+    neg = function(a)
+    end,
+    number = function(d)
+    end,
+    pow = function(a,b)
+    end,
+    powmod = function(a,b,c)
+    end,
+    sqrt = function(a)
+    end,
+    sub = function(a,b)
+    end,
+    tonumber = function(a,b)
+    end,
+    tostring = function(a)
+    end,
+    trunc = function(a,n)
+    end
 }
 
 db = {}
