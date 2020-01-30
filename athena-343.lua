@@ -267,7 +267,7 @@ function assertFalse(exp, message)
   end
 end
 
-function assertNotEquals(a, b, message)
+function assertNotEquals(expected, actual, message)
   if actual ~= expected then
     return 
   end
