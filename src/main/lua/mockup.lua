@@ -11,16 +11,6 @@ _G.loadfile = nil
 _G.dofile = nil
 _G.module = nil
 
-system = {
-  _m = {},
-  getItem = function(key)
-    return system._m[key]
-  end,
-  setItem = function(key, value)
-    system._m[key] = value
-  end
-}
-
 abi = {
   register = function (funcname, ...)
   end
