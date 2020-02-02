@@ -10,7 +10,7 @@ function assertTrue(exp, message)
   if message then
     error(message, 0)
   else
-    error("expression must be ture", 0)
+    error("expression must be true", 0)
   end
 end
 
@@ -22,11 +22,11 @@ function assertFalse(exp, message)
   if message then
     error(message, 0)
   else
-    error("expression must be ture", 0)
+    error("expression must be true", 0)
   end
 end
 
-function assertNotEquals(a, b, message)
+function assertNotEquals(expected, actual, message)
   if actual ~= expected then
     return 
   end
